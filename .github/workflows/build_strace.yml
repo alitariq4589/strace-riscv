@@ -104,7 +104,7 @@ jobs:
       - name: Get strace version and set outputs
         id: get-version
         run: |
-          STRACE_VERSION=$($GITHUB_WORKSPACE/installed_binaries/bin/strace -V | head -n1 | awk '{print $2}')
+          STRACE_VERSION=$($GITHUB_WORKSPACE/installed_binaries/bin/strace -V | head -n1 | awk '{print $4}')
           ASSET_NAME="strace-${STRACE_VERSION}-riscv64-linux.tar.gz"
           ASSET_PATH="$GITHUB_WORKSPACE/${ASSET_NAME}"
 
